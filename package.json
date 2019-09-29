@@ -1,0 +1,50 @@
+{
+  "name": "simple-web-service",
+  "version": "1.0.0",
+  "description": "Simple web service example with an sqlite3 db",
+  "main": "publish/index.js",
+  "scripts": {
+    "start": "node publish/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:client": "parcel watch client/index.html client/users.html --out-dir publish/client",
+    "dev:server": "nodemon --watch ./server --exec yarn babel-node ./server/index.js",
+    "build:client": "parcel build client/index.html client/users.html --out-dir publish/client",
+    "build:server": "rollup -c",
+    "prebuild": "rm -rf dist",
+    "build": "yarn build:client && yarn build:server",
+    "build:start": "yarn build && yarn start",
+    "dev": "yarn dev:server & yarn dev:client"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/runtime": "^7.6.2",
+    "app-root-path": "^2.0.1",
+    "axios": "^0.19.0",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.2",
+    "dotenv": "^8.1.0",
+    "express": "^4.16.3",
+    "faker": "https://github.com/Marak/faker.js",
+    "sqlite3": "^4.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/node": "^7.6.2",
+    "@babel/plugin-transform-destructuring": "^7.6.0",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "babel-node": "^0.0.1-security",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "bulma": "^0.7.5",
+    "node-sass": "^4.9.0",
+    "nodemon": "^1.17.5",
+    "parcel": "^1.8.1",
+    "rollup": "^1.22.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.0.0"
+  }
+}

@@ -1,0 +1,1 @@
+const FAKE_USERS_NUM = 5;

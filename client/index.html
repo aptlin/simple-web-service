@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Pwn Me</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="./index.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <h1 class="navbar-item">
+            <a class="tag is-warning is-medium" href="/">
+              <b>Pwn Me</b>
+            </a>
+          </h1>
+          <div class="navbar-item">
+            <a class="tag is-white is-medium" href="./users.html">
+              <b>Active Users</b>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <div class="section">
+        <div class="columns">
+          <div class="column">
+            <div class="field has-addons">
+              <div class="control">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="The user's id"
+                  id="id-search-term"
+                />
+              </div>
+              <div class="control">
+                <a class="button is-info" id="search-by-id">
+                  Search by ID
+                </a>
+              </div>
+            </div>
+            <div class="field has-addons">
+              <div class="control">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="The user's username"
+                  id="username-search-term"
+                />
+              </div>
+              <div class="control">
+                <a class="button is-info" id="search-by-username">
+                  Search by Username
+                </a>
+              </div>
+            </div>
+            <article class="message is-danger is-hidden" id="search-status">
+              <div class="message-header">
+                <p>We are really sorry...</p>
+              </div>
+              <div class="message-body">
+                This user does not exist.
+              </div>
+            </article>
+          </div>
+          <div class="column">
+            <div class="card is-hidden" id="info">
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-48x48">
+                      <img
+                        src="https://bulma.io/images/placeholders/96x96.png"
+                        alt="Placeholder image"
+                        id="logo"
+                      />
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-4" id="username">John Smith</p>
+                    <p class="subtitle is-6" id="status">User</p>
+                  </div>
+                </div>
+                <div class="content">
+                  <table class="table">
+                    <tbody id="table-body"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
