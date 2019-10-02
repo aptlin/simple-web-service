@@ -27,8 +27,8 @@ export async function createFakeUsers() {
   const users = [];
   const passwords = [];
   while (
-    state.activeUsersNumber < 3 ||
-    state.inactiveUsersNumber < 2 ||
+    state.activeUsersNumber < config.MIN_ACTIVE_USERS_NUM ||
+    state.inactiveUsersNumber < config.MIN_INACTIVE_USERS_NUM ||
     state.activeUsersNumber + state.inactiveUsersNumber < config.FAKE_USERS_NUM
   ) {
     const user = await createUser();
